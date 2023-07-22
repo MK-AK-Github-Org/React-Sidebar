@@ -1,7 +1,5 @@
 import { NavLink } from "react-router-dom";
 import { FaBars, FaHome, FaUser } from "react-icons/fa";
-import { CgProfile } from "react-icons/cg";
-import { IconContext } from "react-icons";
 import { MdMessage } from "react-icons/md";
 import { BiAnalyse } from "react-icons/bi";
 import { BiCog } from "react-icons/bi";
@@ -9,6 +7,7 @@ import { AiTwotoneFileExclamation } from "react-icons/ai";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SidebarMenu from "./SidebarMenu";
+import "../../css/sidebar.css";
 
 const routes = [
   {
@@ -36,11 +35,11 @@ const routes = [
     name: "Task",
     icon: <AiTwotoneFileExclamation />,
   },
-  // {
-  //   path: "/logout",
-  //   name: "Logout",
-  //   icon: <BiAnalyse />,
-  // },
+  {
+    path: "/logout",
+    name: "Logout",
+    icon: <BiAnalyse />,
+  },
 ];
 
 const SideBar = ({ children }) => {
@@ -98,71 +97,45 @@ const SideBar = ({ children }) => {
               <FaBars onClick={toggle} />
             </div>
           </div>
-          <div className="divider">
-            <section className="routes">
-              {routes.map((route, index) => {
-                if (route.subRoutes) {
-                  return (
-                    <SidebarMenu
-                      setIsOpen={setIsOpen}
-                      route={route}
-                      showAnimation={showAnimation}
-                      isOpen={isOpen}
-                    />
-                  );
-                }
 
+          <section className="routes">
+            {routes.map((route, index) => {
+              if (route.subRoutes) {
                 return (
-                  <NavLink
-                    to={route.path}
-                    key={index}
-                    className="link"
-                    activeClassName="active"
-                  >
-                    <div className="icon">{route.icon}</div>
-                    <AnimatePresence>
-                      {isOpen && (
-                        <motion.div
-                          variants={showAnimation}
-                          initial="hidden"
-                          animate="show"
-                          exit="hidden"
-                          className="link_text"
-                        >
-                          {route.name}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </NavLink>
+                  <SidebarMenu
+                    setIsOpen={setIsOpen}
+                    route={route}
+                    showAnimation={showAnimation}
+                    isOpen={isOpen}
+                  />
                 );
-              })}
-            </section>
-            <div className={isOpen ? "bottom_section" : "hidden-bottom"}>
-              <div className="info">
-                <IconContext.Provider value={{ size: "6em" }}>
-                  <span>
-                    <CgProfile />
-                  </span>
-                </IconContext.Provider>
-                <b>Username</b>
+              }
 
-                <span>Points: 000</span>
-                <span>Rank: 00</span>
-              </div>
-
-              <div className="logout">
-                <button class="Btn">
-                  <div class="sign">
-                    <svg viewBox="0 0 512 512">
-                      <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path>
-                    </svg>
-                  </div>
-
-                  <div class="text">Logout</div>
-                </button>
-              </div>
-            </div>
-          </div>
+              return (
+                <NavLink
+                  to={route.path}
+                  key={index}
+                  className="link"
+                  activeClassName="active"
+                >
+                  <div className="icon">{route.icon}</div>
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        variants={showAnimation}
+                        initial="hidden"
+                        animate="show"
+                        exit="hidden"
+                        className="link_text"
+                      >
+                        {route.name}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </NavLink>
+              );
+            })}
+          </section>
         </motion.div>
 
         <main>{children}</main>
