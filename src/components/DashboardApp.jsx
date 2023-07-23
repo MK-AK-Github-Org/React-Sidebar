@@ -7,7 +7,7 @@ import {
   Task,
   Logout,
 } from "../pages";
-import Sidebar from "./Sidebar/SideBar";
+import Sidebar from "./SideBar";
 
 const App = () => {
   return (

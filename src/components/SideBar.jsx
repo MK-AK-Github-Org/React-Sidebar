@@ -6,8 +6,7 @@ import { BiCog } from "react-icons/bi";
 import { AiTwotoneFileExclamation } from "react-icons/ai";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import SidebarMenu from "./SidebarMenu";
-import "../../css/sidebar.css";
+import "../css/sidebar.css";
 
 const routes = [
   {
@@ -41,7 +40,6 @@ const routes = [
     icon: <BiAnalyse />,
   },
 ];
-
 const SideBar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
@@ -68,13 +66,8 @@ const SideBar = ({ children }) => {
       <div className="main-container">
         <motion.div
           animate={{
-            width: isOpen ? "250px" : "40px",
-
-            transition: {
-              duration: 0.5,
-              type: "spring",
-              damping: 10,
-            },
+            width: isOpen ? "250px" : "45px",
+            transition: { duration: 0.5, type: "spring", damping: 10 },
           }}
           className={`sidebar `}
         >
@@ -97,20 +90,8 @@ const SideBar = ({ children }) => {
               <FaBars onClick={toggle} />
             </div>
           </div>
-
           <section className="routes">
             {routes.map((route, index) => {
-              if (route.subRoutes) {
-                return (
-                  <SidebarMenu
-                    setIsOpen={setIsOpen}
-                    route={route}
-                    showAnimation={showAnimation}
-                    isOpen={isOpen}
-                  />
-                );
-              }
-
               return (
                 <NavLink
                   to={route.path}
