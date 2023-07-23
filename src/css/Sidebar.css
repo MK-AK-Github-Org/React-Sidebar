@@ -3,19 +3,16 @@
 }
 main {
   padding: 10px 100px;
-  width: 100vw;
+  /* width: 100vw; */
 }
-
 .title {
   font-size: 3rem;
   display: grid;
   place-items: end;
-  /* width: 100%; */
-  /* margin-right: 50vw; */
-  /* margin-left: 700px; */
 }
 
 /* Sidebar */
+
 .sidebar {
   background: rgb(0, 7, 61);
   color: white;
@@ -35,6 +32,8 @@ main {
 }
 .bars {
   width: 20px;
+  font-size: x-large;
+  cursor: pointer;
 }
 .hide {
   display: none;
@@ -45,6 +44,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  font-size: x-large;
 }
 .link {
   display: flex;
@@ -65,32 +65,13 @@ main {
 }
 .link_text {
   white-space: nowrap;
-  font-size: 15px;
-}
-
-.menu {
-  display: flex;
-  color: white;
-  padding: 5px 10px;
-  border-right: 4px solid transparent;
-  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-  justify-content: space-between;
-}
-.menu_item {
-  display: flex;
-  gap: 10px;
-}
-.menu_container {
-  display: flex;
-  flex-direction: column;
-}
-.menu_container .link {
-  padding-left: 20px;
-  border-bottom: #fff 0.5px solid;
+  font-size: 20px;
 }
 
 /* 
-BOTTOM SECTION */
+   BOTTOM SECTION 
+*/
+
 .info {
   display: flex;
   flex-direction: column;
@@ -98,8 +79,6 @@ BOTTOM SECTION */
   justify-content: center;
   padding: 10px 10px;
   margin-bottom: 10px;
-  /* border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff; */
 }
 
 .bottom_section {
@@ -121,7 +100,9 @@ BOTTOM SECTION */
   padding-left: 25px;
 }
 
-/* LOGOUT BUTTON */
+/* 
+   LOGOUT BUTTON
+*/
 
 .Btn {
   display: flex;
@@ -137,6 +118,7 @@ BOTTOM SECTION */
   transition-duration: 0.3s;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
   background-color: rgb(255, 65, 65);
+  margin-left: 15%;
 }
 
 /* plus sign */
@@ -155,6 +137,7 @@ BOTTOM SECTION */
 .sign svg path {
   fill: white;
 }
+
 /* text */
 .text {
   position: absolute;
@@ -166,6 +149,7 @@ BOTTOM SECTION */
   font-weight: 600;
   transition-duration: 0.3s;
 }
+
 /* hover effect on button width */
 .Btn:hover {
   width: 125px;
@@ -177,6 +161,7 @@ BOTTOM SECTION */
   width: 30%;
   transition-duration: 0.3s;
 }
+
 /* hover effect button's text */
 .Btn:hover .text {
   opacity: 1;
@@ -184,6 +169,7 @@ BOTTOM SECTION */
   transition-duration: 0.3s;
   padding-right: 10px;
 }
+
 /* button click effect*/
 .Btn:active {
   transform: translate(2px, 2px);
