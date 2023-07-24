@@ -1,8 +1,9 @@
 import { NavLink } from "react-router-dom";
-import { FaBars, FaHome, FaUser } from "react-icons/fa";
+import { FaBars, FaHome, FaUser, FaTasks } from "react-icons/fa";
+
 import { CgProfile } from "react-icons/cg";
 import { IconContext } from "react-icons";
-import { MdMessage } from "react-icons/md";
+import { MdMessage, MdLeaderboard } from "react-icons/md";
 import { BiAnalyse } from "react-icons/bi";
 import { BiCog } from "react-icons/bi";
 import { AiTwotoneFileExclamation } from "react-icons/ai";
@@ -29,18 +30,13 @@ const routes = [
   {
     path: "/leaderboard",
     name: "Leaderboard",
-    icon: <BiCog />,
+    icon: <MdLeaderboard />,
   },
   {
     path: "/task",
     name: "Task",
-    icon: <AiTwotoneFileExclamation />,
+    icon: <FaTasks />,
   },
-  // {
-  //   path: "/logout",
-  //   name: "Logout",
-  //   icon: <BiAnalyse />,
-  // },
 ];
 
 const SideBar = ({ children }) => {

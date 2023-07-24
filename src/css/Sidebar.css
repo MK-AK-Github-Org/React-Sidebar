@@ -1,9 +1,11 @@
 .main-container {
   display: flex;
 }
-main {
+.main-container main {
   padding: 10px 100px;
   width: 100vw;
+  height: 100vh;
+  margin: 20px 20px 20px 60px;
 }
 
 .title {
@@ -21,6 +23,8 @@ main {
   color: white;
   height: 100vh;
   overflow-y: auto;
+  position: fixed;
+  z-index: 2;
 }
 
 .top_section {
