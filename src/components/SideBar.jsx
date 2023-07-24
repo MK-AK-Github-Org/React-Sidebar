@@ -1,10 +1,8 @@
 import { NavLink } from "react-router-dom";
-import { FaBars, FaHome, FaUser } from "react-icons/fa";
+import { FaBars, FaHome, FaUser, FaTasks } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { IconContext } from "react-icons";
-import { MdMessage } from "react-icons/md";
-import { BiCog } from "react-icons/bi";
-import { AiTwotoneFileExclamation } from "react-icons/ai";
+import { MdMessage, MdLeaderboard } from "react-icons/md";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import "../css/sidebar.css";
@@ -28,12 +26,12 @@ const routes = [
   {
     path: "/leaderboard",
     name: "Leaderboard",
-    icon: <BiCog />,
+    icon: <MdLeaderboard />,
   },
   {
     path: "/task",
     name: "Task",
-    icon: <AiTwotoneFileExclamation />,
+    icon: <FaTasks />,
   },
 ];
 const SideBar = ({ children }) => {
@@ -62,7 +60,7 @@ const SideBar = ({ children }) => {
       <div className="main-container">
         <motion.div
           animate={{
-            width: isOpen ? "250px" : "57px",
+            width: isOpen ? "265px" : "60px",
             transition: { duration: 0.5, type: "spring", damping: 9 },
           }}
           className="sidebar"
